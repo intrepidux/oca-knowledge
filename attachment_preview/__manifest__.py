@@ -15,8 +15,9 @@
     "assets": {
         "web._assets_primary_variables": [],
         "web.assets_backend": [
-            "attachment_preview/static/src/js/models/attachment_card/attachment_card.esm.js",
+            # ESM: widget first, then consumers (FormRenderer patch, chatter patch)
             "attachment_preview/static/src/js/attachmentPreviewWidget.esm.js",
+            "attachment_preview/static/src/js/models/attachment_card/attachment_card.esm.js",
             "attachment_preview/static/src/js/components/chatter/chatter.esm.js",
             "attachment_preview/static/src/scss/attachment_preview.scss",
         ],

@@ -1,10 +1,10 @@
-/** @odoo-module */
+/** @odoo-module **/
 import Widget from "web.Widget";
 
 var active_attachment_index = 0;
 var is_first_click = true;
 
-var AttachmentPreviewWidget = Widget.extend({
+const AttachmentPreviewWidget = Widget.extend({
     template: "attachment_preview.AttachmentPreviewWidget",
     activeIndex: 0,
 
@@ -16,7 +16,6 @@ var AttachmentPreviewWidget = Widget.extend({
     },
 
     start: function () {
-        // First_click = true;
         var res = this._super.apply(this, arguments);
         this.$overlay = $(".attachment_preview_overlay");
         this.$iframe = $(".attachment_preview_iframe");
@@ -100,9 +99,10 @@ var AttachmentPreviewWidget = Widget.extend({
         }
 
         if (is_first_click) {
-            for (let i = 0; i < this.attachments.length; i++) {
+            for (var i = 0; i < this.attachments.length; i++) {
                 if (
-                    parseInt(this.attachments[i].id, 10) === this.active_attachment_id
+                    parseInt(this.attachments[i].id, 10) ===
+                    this.active_attachment_id
                 ) {
                     active_attachment_index = i;
                     is_first_click = false;
